@@ -10,7 +10,7 @@ import java.awt.Color;
 import org.opensourcephysics.display.InteractiveCircle;
 
 /**
- * A drawable charged particle.
+ * A drawable charged particle. Its color depends on the sign of the charge. Red for Positive, Blue for negative.
  *
  * This class is used by the ElectricFieldApp and FieldLineApp.
  * @author Wolfgang Christian, Jan Tobochnik, Harvey Gould
@@ -19,6 +19,10 @@ import org.opensourcephysics.display.InteractiveCircle;
 public class Charge extends InteractiveCircle {
   double q = 0;
 
+  /**
+   * 
+   * @return the number, you know. In Coulombs.
+   */
   public double getQ() {
     return q;
   }
@@ -28,7 +32,7 @@ public class Charge extends InteractiveCircle {
     this.q = q;
     if(q>0) {
       color = Color.red;
-    } else {
+    }else{
       color = Color.blue;
     }
   }

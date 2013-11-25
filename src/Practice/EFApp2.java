@@ -19,7 +19,7 @@ import org.opensourcephysics.frames.Vector2DFrame;
  * @author Wolfgang Christian, Jan Tobochnik, Harvey Gould
  * @version 1.0
  */
-public class EFApp2 extends AbstractCalculation implements InteractiveMouseHandler {
+public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandler {
   int n = 20;                                // grid points on a side
   double a = 10;                             // viewing side length
   double[][][] eField = new double[2][n][n]; // stores electric field
@@ -28,7 +28,7 @@ public class EFApp2 extends AbstractCalculation implements InteractiveMouseHandl
   /**
    * The ElectricFieldApp constructor.
    */
-  public EFApp2() {
+  public EFApp2(){
     frame.setPreferredMinMax(-a/2, a/2, -a/2, a/2);
     frame.setZRange(false, 0, 2);
     frame.setAll(eField); // sets the vector field
@@ -39,13 +39,14 @@ public class EFApp2 extends AbstractCalculation implements InteractiveMouseHandl
   /**
    * Adds a new charge.
    */
-  public void calculate() {
+  public void calculate(){
     double x = control.getDouble("x");
     double y = control.getDouble("y");
     double q = control.getDouble("q");
     Charge charge = new Charge(x, y, q);
     frame.addDrawable(charge);
     calculateField();
+      
   }
 
   /**
@@ -55,9 +56,9 @@ public class EFApp2 extends AbstractCalculation implements InteractiveMouseHandl
     control.println("Calculate creates a new charge and updates the field.");
     control.println("You can drag charges.");
     frame.clearDrawables(); // removes all charges
-    control.setValue("x", 0);
-    control.setValue("y", 0);
-    control.setValue("q", 1);
+    control.setValue("x", 2);
+    control.setValue("y", 4);
+    control.setValue("q", -5);
     calculateField();
   }
 
@@ -113,8 +114,13 @@ public class EFApp2 extends AbstractCalculation implements InteractiveMouseHandl
    * @param args[]  the input parameters
    */
   public static void main(String[] args) {
-    CalculationControl.createApp(new EFApp2());
+    SimulationControl.createApp(new EFApp2());
   }
+
+    @Override
+    protected void doStep() {
+        
+    }
 }
 
 /* 

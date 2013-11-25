@@ -105,6 +105,9 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     panel.handleMouseAction(panel, evt); // panel moves the charge
     if(panel.getMouseAction()==InteractivePanel.MOUSE_DRAGGED) {
       calculateField(); // remove this line if user interface is slugish
+        //System.out.println("\nEx at (0,0): " + eField[0][10][10]);
+//        System.out.println("Ey at (0,0): " + eField[1][10][10]);
+        Charge qx = (Charge)(((PlottingPanel)(evt.getSource()))).getInteractive();
       panel.repaint();
     }
   }

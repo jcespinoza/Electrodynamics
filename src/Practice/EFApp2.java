@@ -24,7 +24,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
   double a = 10;                             // viewing side length
   double[][][] eField = new double[2][n][n]; // stores electric field
   Vector2DFrame frame = new Vector2DFrame("x", "y", "Electric field");
-  TestCharge tCharge = new TestCharge(0, 0, 1,1);
+  TestCharge tCharge = new TestCharge(0, 0, 1,0.1);
 
   /**
    * The ElectricFieldApp constructor.
@@ -74,10 +74,10 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     frame.clearDrawables(); // removes all charges
     control.setValue("x1", 2);
     control.setValue("y1", 4);
-    control.setValue("q1", -5);
+    control.setValue("q1", 1);
     control.setValue("x2", -2);
-    control.setValue("y2", -4);
-    control.setValue("q2", 5);
+    control.setValue("y2", 4);
+    control.setValue("q2", 1);
     
     calculateField();
   }
@@ -142,8 +142,13 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
 
     @Override
     protected void doStep() {
+        System.out.println("X" + tCharge.getX());
+        System.out.println("Y" + tCharge.getY());
         double Ex = eField[0][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10];
         double Ey = eField[1][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10];
+        System.out.println("Ex: " + Ex);
+        System.out.println("Ey: " + Ey);
+        tCharge.doStep(Ex, Ey);
     }
 }
 

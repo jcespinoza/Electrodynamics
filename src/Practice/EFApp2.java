@@ -24,6 +24,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
   double a = 10;                             // viewing side length
   double[][][] eField = new double[2][n][n]; // stores electric field
   Vector2DFrame frame = new Vector2DFrame("x", "y", "Electric field");
+  TestCharge tCharge = new TestCharge(0, 0, 1,1);
 
   /**
    * The ElectricFieldApp constructor.
@@ -36,15 +37,30 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     frame.setDefaultCloseOperation(OSPFrame.DISPOSE_ON_CLOSE);
   }
 
+  public void createFixedCharges(){
+    double x1 = control.getDouble("x1");
+    double y1 = control.getDouble("y1");
+    double q1 = control.getDouble("q1");
+    Charge charge1 = new Charge(x1, y1, q1);
+    double x2 = control.getDouble("x2");
+    double y2 = control.getDouble("y2");
+    double q2 = control.getDouble("q2");
+    Charge charge2 = new Charge(x2, y2, q2);
+    frame.addDrawable(charge1);
+    frame.addDrawable(charge2);
+    frame.addDrawable(tCharge);
+  }
+  
+  public void start(){
+      createFixedCharges();
+      calculateField();
+  }
+  
   /**
    * Adds a new charge.
    */
   public void calculate(){
-    double x = control.getDouble("x");
-    double y = control.getDouble("y");
-    double q = control.getDouble("q");
-    Charge charge = new Charge(x, y, q);
-    frame.addDrawable(charge);
+    
     calculateField();
       
   }
@@ -56,9 +72,13 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     control.println("Calculate creates a new charge and updates the field.");
     control.println("You can drag charges.");
     frame.clearDrawables(); // removes all charges
-    control.setValue("x", 2);
-    control.setValue("y", 4);
-    control.setValue("q", -5);
+    control.setValue("x1", 2);
+    control.setValue("y1", 4);
+    control.setValue("q1", -5);
+    control.setValue("x2", -2);
+    control.setValue("y2", -4);
+    control.setValue("q2", 5);
+    
     calculateField();
   }
 
@@ -105,8 +125,8 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     panel.handleMouseAction(panel, evt); // panel moves the charge
     if(panel.getMouseAction()==InteractivePanel.MOUSE_DRAGGED) {
       calculateField(); // remove this line if user interface is slugish
-        //System.out.println("\nEx at (0,0): " + eField[0][10][10]);
-//        System.out.println("Ey at (0,0): " + eField[1][10][10]);
+        System.out.println("\nEx at (" + (int)(tCharge.getX()) + "," + (int)(tCharge.getY()) + "): " + eField[0][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10]);
+        System.out.println("Ey at (" + (int)(tCharge.getX()) + "," + (int)(tCharge.getY()) + "): " + eField[1][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10]);
         Charge qx = (Charge)(((PlottingPanel)(evt.getSource()))).getInteractive();
       panel.repaint();
     }
@@ -122,7 +142,8 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
 
     @Override
     protected void doStep() {
-        
+        double Ex = eField[0][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10];
+        double Ey = eField[1][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10];
     }
 }
 

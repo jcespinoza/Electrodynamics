@@ -12,9 +12,37 @@ import org.opensourcephysics.numerics.ODE;
  *
  */
 public class TestCharge extends Charge implements ODE{
+    double m = 0;
+    double vx = 0;
+    double vy = 0;
 
-    public TestCharge(double x, double y, double q){
+    public double getM() {
+        return m;
+    }
+
+    public void setM(double m) {
+        this.m = m;
+    }
+
+    public double getVx() {
+        return vx;
+    }
+
+    public void setVx(double vx) {
+        this.vx = vx;
+    }
+
+    public double getVy() {
+        return vy;
+    }
+
+    public void setVy(double vy) {
+        this.vy = vy;
+    }
+    
+    public TestCharge(double x, double y, double q, double m){
         super(x, y, q);
+        this.m = m;
     }
         
     @Override
@@ -26,7 +54,4 @@ public class TestCharge extends Charge implements ODE{
     public void getRate(double[] state, double[] rate) {
         
     }
-
-   
-
 }

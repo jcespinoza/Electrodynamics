@@ -149,6 +149,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
         System.out.println("Ex: " + Ex);
         System.out.println("Ey: " + Ey);
         tCharge.doStep(Ex, Ey);
+        calculate();
     }
 }
 

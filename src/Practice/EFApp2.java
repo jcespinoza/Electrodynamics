@@ -125,9 +125,9 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     panel.handleMouseAction(panel, evt); // panel moves the charge
     if(panel.getMouseAction()==InteractivePanel.MOUSE_DRAGGED) {
       calculateField(); // remove this line if user interface is slugish
-        System.out.println("\nEx at (" + (int)(tCharge.getX()) + "," + (int)(tCharge.getY()) + "): " + eField[0][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10]);
-        System.out.println("Ey at (" + (int)(tCharge.getX()) + "," + (int)(tCharge.getY()) + "): " + eField[1][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10]);
-        Charge qx = (Charge)(((PlottingPanel)(evt.getSource()))).getInteractive();
+        //System.out.println("\nEx at (" + (int)(tCharge.getX()) + "," + (int)(tCharge.getY()) + "): " + eField[0][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10]);
+        //System.out.println("Ey at (" + (int)(tCharge.getX()) + "," + (int)(tCharge.getY()) + "): " + eField[1][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10]);
+        //Charge qx = (Charge)(((PlottingPanel)(evt.getSource()))).getInteractive();
       panel.repaint();
     }
   }
@@ -142,12 +142,14 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
 
     @Override
     protected void doStep() {
-        System.out.println("X" + tCharge.getX());
-        System.out.println("Y" + tCharge.getY());
-        double Ex = eField[0][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10];
-        double Ey = eField[1][(int)(tCharge.getX())+10][(int)(tCharge.getY())+10];
-        System.out.println("Ex: " + Ex);
-        System.out.println("Ey: " + Ey);
+        double xPos = frame.xToIndex(tCharge.getX());
+        double yPos = frame.yToIndex(tCharge.getY());
+        //System.out.println("X: " + xPos);
+        //System.out.println("Y: " + yPos);
+        double Ex = eField[0][(int)(xPos)][(int)(yPos)];
+        double Ey = eField[1][(int)(xPos)][(int)(yPos)];
+        //System.out.println("Ex: " + Ex);
+        //System.out.println("Ey: " + Ey);
         tCharge.doStep(Ex, Ey);
         calculate();
     }

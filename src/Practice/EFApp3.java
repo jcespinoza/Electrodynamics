@@ -15,7 +15,7 @@ import org.opensourcephysics.frames.Vector2DFrame;
  * @author Juan Carlos Espinoza
  *
  */
-public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandler{
+public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandler{
     int n = 30;
     int a = 50;
     double eField[][][] = new double[2][n][n];
@@ -23,7 +23,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     TestCharge tCharge;
     
     
-    public EFApp2(){
+    public EFApp3(){
         frame.setPreferredMinMax(-a/2, a/2, -a/2, a/2);
         frame.setZRange(false, 0, 2);
         frame.setAll(eField); // sets the vector field
@@ -32,7 +32,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     }
     
     public static void main(String[] args) {
-        SimulationControl.createApp(new EFApp2());
+        SimulationControl.createApp(new EFApp3());
     }
 
     /*From AbstractSimulation*/

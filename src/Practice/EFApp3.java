@@ -16,8 +16,8 @@ import org.opensourcephysics.frames.Vector2DFrame;
  *
  */
 public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandler{
-    int n = 30;
-    int a = 50;
+    int n = 20;
+    int a = 10;
     double eField[][][] = new double[2][n][n];
     Vector2DFrame frame = new Vector2DFrame("X", "Y", "Electrid Field");
     TestCharge tCharge;
@@ -73,16 +73,15 @@ public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandle
         double q1 = control.getDouble("q1");
         Charge charge1 = new Charge(x1, y1, q1);
         frame.addDrawable(charge1);
-        double x2 = control.getDouble("x2");
-        double y2 = control.getDouble("y2");
-        double q2 = control.getDouble("q2");
-        Charge charge2 = new Charge(x2, y2, q2);
-        frame.addDrawable(charge2);
         double px = control.getDouble("px");
+        double pvx = control.getDouble("pvx");
         double py = control.getDouble("py");
+        double pvy = control.getDouble("pvy");
         double pq = control.getDouble("pq");
         double pm = control.getDouble("pm");
         tCharge = new TestCharge(px, py, pq, pm);
+        tCharge.setVx(pvx);
+        tCharge.setVy(pvy);
         frame.addDrawable(tCharge);
         calculateField();
         System.out.println("Triggered initialize()");
@@ -92,16 +91,15 @@ public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandle
     public void reset() {
         control.println("Creates charges");
         control.println("You can drag charges.");
-        control.setValue("x1", -5);
+        control.setValue("x1", 0);
         control.setValue("y1", 0);
-        control.setValue("q1", 3);
-        control.setValue("x2", 5);
-        control.setValue("y2", 0);
-        control.setValue("q2", 3);
-        control.setValue("px", 0);
-        control.setValue("py", -15);
-        control.setValue("pq", -3);
-        control.setValue("pm", 1);
+        control.setValue("q1", 1.5);
+        control.setValue("px", 1);
+        control.setValue("pvx", 0);
+        control.setValue("py", 0);
+        control.setValue("pvy", 0);
+        control.setValue("pq", 1);
+        control.setValue("pm", 0.1);
         frame.clearDrawables();
         System.out.println("Triggered reset()");
     }

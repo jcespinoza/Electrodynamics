@@ -1,17 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Practice;
 
-import org.opensourcephysics.numerics.Adams4;
 import org.opensourcephysics.numerics.Euler;
 import org.opensourcephysics.numerics.EulerRichardson;
 import org.opensourcephysics.numerics.ODE;
 import org.opensourcephysics.numerics.ODESolver;
-import org.opensourcephysics.numerics.RK45;
-import org.opensourcephysics.numerics.Verlet;
 
 /**
  * @author Juan Carlos Espinoza
@@ -21,7 +13,7 @@ public class TestCharge extends Charge implements ODE{
     double m = 0;
     double Ex, Ey = 0;
     double[] state = new double[5];
-    ODESolver odeSolver = new Euler(this);//RK45(this);
+    ODESolver odeSolver = new EulerRichardson(this);//RK45(this);
 
     public double getM() {
         return m;
@@ -30,12 +22,17 @@ public class TestCharge extends Charge implements ODE{
     public void setM(double m) {
         this.m = m;
     }
+    
+    public void setVx(double vx){
+        state[1] = vx;
+    }
+    
+    public void setVy(double vy){
+        state[3] = vy;
+    }
    
     public TestCharge(double x, double y, double q, double m){
         super(x, y, q);
-        //force projectile
-        //state[1] = 10;
-        //state[2] = -10;
         state[0] = getX();
         state[2] = getY();
         this.m = m;

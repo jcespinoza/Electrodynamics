@@ -15,9 +15,9 @@ import org.opensourcephysics.frames.Vector2DFrame;
  * @author Juan Carlos Espinoza
  *
  */
-public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandler{
+public class EFApp4 extends AbstractSimulation implements InteractiveMouseHandler{
     int n = 20;
-    int a = 10;
+    int a = 11;
     int maxX = a/2;
     int maxY = a/2;
     int minX = -(a/2);
@@ -28,7 +28,7 @@ public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandle
     TestCharge tCharge;
     
     
-    public EFApp3(){
+    public EFApp4(){
         frame.setPreferredMinMax(-a/2, a/2, -a/2, a/2);
         frame.setZRange(false, 0, 2);
         frame.setAll(eField); // sets the vector field
@@ -37,7 +37,7 @@ public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandle
     }
     
     public static void main(String[] args) {
-        SimulationControl.createApp(new EFApp3());
+        SimulationControl.createApp(new EFApp4());
     }
 
     /*From AbstractSimulation*/
@@ -73,6 +73,7 @@ public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandle
         }
     }
 
+
     @Override
     public void start() {
         calculateField();
@@ -87,15 +88,16 @@ public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandle
         double q1 = control.getDouble("q1");
         Charge charge1 = new Charge(x1, y1, q1);
         frame.addDrawable(charge1);
+        double x2 = control.getDouble("x2");
+        double y2 = control.getDouble("y2");
+        double q2 = control.getDouble("q2");
+        Charge charge2 = new Charge(x2, y2, q2);
+        frame.addDrawable(charge2);
         double px = control.getDouble("px");
-        double pvx = control.getDouble("pvx");
         double py = control.getDouble("py");
-        double pvy = control.getDouble("pvy");
         double pq = control.getDouble("pq");
         double pm = control.getDouble("pm");
         tCharge = new TestCharge(px, py, pq, pm);
-        tCharge.setVx(pvx);
-        tCharge.setVy(pvy);
         frame.addDrawable(tCharge);
         boundariesEnabled = control.getBoolean("Jaula");
         calculateField();
@@ -106,15 +108,16 @@ public class EFApp3 extends AbstractSimulation implements InteractiveMouseHandle
     public void reset() {
         control.println("Creates charges");
         control.println("You can drag charges.");
-        control.setValue("x1", 0);
+        control.setValue("x1", 2);
         control.setValue("y1", 0);
-        control.setValue("q1", 1.5);
-        control.setValue("px", 1);
-        control.setValue("pvx", 0);
+        control.setValue("q1", 1);
+        control.setValue("x2", -2);
+        control.setValue("y2", 0);
+        control.setValue("q2", -1);
+        control.setValue("px", 0.05);
         control.setValue("py", 0);
-        control.setValue("pvy", 0);
         control.setValue("pq", 1);
-        control.setValue("pm", 0.1);
+        control.setValue("pm", 1);
         control.setValue("Jaula", true);
         frame.clearDrawables();
         System.out.println("Triggered reset()");
@@ -166,8 +169,6 @@ for(int ix = 0;ix<n;ix++) {
         double yComp[][] = eField[1];
         double ex = xComp[xPos][yPos];
         double ey = yComp[xPos][yPos];
-        //System.out.println("Ex: " + ex);
-        //System.out.println("Ey: " + ey);
         ret[0] = ex;
         ret[1] = ey;
         return ret;

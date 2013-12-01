@@ -22,6 +22,20 @@ public class TestCharge extends Charge implements ODE{
     public void setM(double m) {
         this.m = m;
     }
+
+    @Override
+    public void setX(double x) {
+        super.setX(x);
+        state[0] = x;
+    }
+
+    @Override
+    public void setY(double y) {
+        super.setY(y);
+        state[2] = y;
+    }
+    
+    
     
     public void setVx(double vx){
         state[1] = vx;
@@ -65,6 +79,20 @@ public class TestCharge extends Charge implements ODE{
     odeSolver.step();
     setX(state[0]);
     setY(state[2]);
+      //System.out.println("X=" + getX() + " Y=" + getY() + " Vx=" + state[1] + " Vy=" + state[3] + " Ex=" + Ex + " Ey=" + Ey);
   }
 
+    public void forceRest(){
+        setVx(0);
+        setVy(0);
+    }
+    
+    public void invertVx(){
+        state[1] *= -0.5;//-state[1]*0.5);
+    }
+
+    public void invertVy(){
+        state[3] *= -0.5;
+
+    }    
 }

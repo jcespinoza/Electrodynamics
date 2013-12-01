@@ -16,8 +16,13 @@ import org.opensourcephysics.frames.Vector2DFrame;
  *
  */
 public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandler{
-    int n = 30;
+    int n = 100;
     int a = 50;
+    int maxX = a/2;
+    int maxY = a/2;
+    int minX = -(a/2);
+    int minY = -(a/2);
+    boolean boundariesEnabled = true;
     double eField[][][] = new double[2][n][n];
     Vector2DFrame frame = new Vector2DFrame("X", "Y", "Electrid Field");
     TestCharge tCharge;
@@ -43,17 +48,31 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
         double Ex = field[0];
         double Ey = field[1];
         tCharge.doStep(Ex, Ey);
+        if(boundariesEnabled){
+            double cx = tCharge.getX();
+            double cy = tCharge.getY();
+            if(cx < minX){
+                tCharge.invertVx();
+                tCharge.setX(minX);
+                return;
+            }
+            if(cy < minY){
+                tCharge.setY(minY);
+                tCharge.invertVy();              
+                return;
+            }
+            if(cx > maxX){
+                tCharge.invertVx();
+                tCharge.setX(maxX);
+                return;
+            }
+            if(cy > maxY){
+                tCharge.invertVy();
+                tCharge.setY(maxY);
+            }
+        }
     }
 
-    @Override
-    public void startRunning() {
-        System.out.println("Triggered startRunning()");
-    }
-
-    @Override
-    public void stopRunning() {
-        System.out.println("Triggered stopRunning()");
-    }
 
     @Override
     public void start() {
@@ -61,10 +80,6 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
         System.out.println("Triggered start()");
     }
 
-    @Override
-    public void stop() {
-        System.out.println("Triggered stop()");
-    }
 
     @Override
     public void initialize() {
@@ -78,12 +93,18 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
         double q2 = control.getDouble("q2");
         Charge charge2 = new Charge(x2, y2, q2);
         frame.addDrawable(charge2);
+        double x3 = control.getDouble("x3");
+        double y3 = control.getDouble("y3");
+        double q3 = control.getDouble("q3");
+        Charge charge3 = new Charge(x3, y3, q3);
+        frame.addDrawable(charge3);
         double px = control.getDouble("px");
         double py = control.getDouble("py");
         double pq = control.getDouble("pq");
         double pm = control.getDouble("pm");
         tCharge = new TestCharge(px, py, pq, pm);
         frame.addDrawable(tCharge);
+        boundariesEnabled = control.getBoolean("Jaula");
         calculateField();
         System.out.println("Triggered initialize()");
     }
@@ -98,10 +119,14 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
         control.setValue("x2", 5);
         control.setValue("y2", 0);
         control.setValue("q2", 3);
+        control.setValue("x3", 5);
+        control.setValue("y3", 3);
+        control.setValue("q3", -3);
         control.setValue("px", 0);
         control.setValue("py", -15);
         control.setValue("pq", -3);
-        control.setValue("pm", 1);
+        control.setValue("pm", 0.1);
+        control.setValue("Jaula", true);
         frame.clearDrawables();
         System.out.println("Triggered reset()");
     }
@@ -144,16 +169,14 @@ for(int ix = 0;ix<n;ix++) {
         double ret[] = {0,0};
         int xPos = frame.xToIndex(tCharge.getX());
         int yPos = frame.yToIndex(tCharge.getY());
-        System.out.println("Xindex: " + xPos + " X: " + tCharge.getX());
-        System.out.println("Yindex: " + yPos + " Y: " + tCharge.getY());
+        //System.out.println("Xindex: " + xPos + " X: " + tCharge.getX());
+        //System.out.println("Yindex: " + yPos + " Y: " + tCharge.getY());
         //double ex = eField[0][(int)(xPos)][(int)(yPos)];
         //double ey = eField[1][(int)(xPos)][(int)(yPos)];
         double xComp[][] = eField[0];
         double yComp[][] = eField[1];
         double ex = xComp[xPos][yPos];
         double ey = yComp[xPos][yPos];
-        System.out.println("Ex: " + ex);
-        System.out.println("Ey: " + ey);
         ret[0] = ex;
         ret[1] = ey;
         return ret;

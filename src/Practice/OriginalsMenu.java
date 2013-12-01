@@ -31,8 +31,11 @@ public class OriginalsMenu extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         oEFieldButton = new javax.swing.JButton();
-        mEFieldButton = new javax.swing.JButton();
+        mEFieldButtonb = new javax.swing.JButton();
         oEFLineButton = new javax.swing.JButton();
+        FLineApp3a = new javax.swing.JButton();
+        mEFieldAppButtond = new javax.swing.JButton();
+        mEFieldButtonc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,10 +48,10 @@ public class OriginalsMenu extends javax.swing.JFrame {
             }
         });
 
-        mEFieldButton.setText("Our ElectricFieldApp 10.1 b");
-        mEFieldButton.addActionListener(new java.awt.event.ActionListener() {
+        mEFieldButtonb.setText("Our ElectricFieldApp 10.1 b");
+        mEFieldButtonb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mEFieldButtonActionPerformed(evt);
+                mEFieldButtonbActionPerformed(evt);
             }
         });
 
@@ -56,6 +59,27 @@ public class OriginalsMenu extends javax.swing.JFrame {
         oEFLineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 oEFLineButtonActionPerformed(evt);
+            }
+        });
+
+        FLineApp3a.setText("Our FieldLineApp 10.3 a");
+        FLineApp3a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FLineApp3aActionPerformed(evt);
+            }
+        });
+
+        mEFieldAppButtond.setText("Our ElectricFieldApp 10.1 d");
+        mEFieldAppButtond.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mEFieldAppButtondActionPerformed(evt);
+            }
+        });
+
+        mEFieldButtonc.setText("Our ElectricFieldApp 10.1 c");
+        mEFieldButtonc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mEFieldButtoncActionPerformed(evt);
             }
         });
 
@@ -69,14 +93,20 @@ public class OriginalsMenu extends javax.swing.JFrame {
                         .addGap(152, 152, 152)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(oEFieldButton)
-                        .addGap(37, 37, 37)
-                        .addComponent(mEFieldButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(oEFLineButton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(oEFieldButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(oEFLineButton)))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(mEFieldButtonb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FLineApp3a, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mEFieldAppButtond, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mEFieldButtonc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,18 +116,24 @@ public class OriginalsMenu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(oEFieldButton)
-                    .addComponent(mEFieldButton))
-                .addGap(81, 81, 81)
-                .addComponent(oEFLineButton)
+                    .addComponent(mEFieldButtonb))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mEFieldButtonc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mEFieldAppButtond)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(oEFLineButton)
+                    .addComponent(FLineApp3a))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mEFieldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mEFieldButtonActionPerformed
+    private void mEFieldButtonbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mEFieldButtonbActionPerformed
         SimulationControl.createApp(new EFApp2());
-    }//GEN-LAST:event_mEFieldButtonActionPerformed
+    }//GEN-LAST:event_mEFieldButtonbActionPerformed
 
     private void oEFieldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oEFieldButtonActionPerformed
         CalculationControl.createApp(new ElectricFieldApp());
@@ -106,6 +142,18 @@ public class OriginalsMenu extends javax.swing.JFrame {
     private void oEFLineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oEFLineButtonActionPerformed
         CalculationControl.createApp(new FieldLineApp());
     }//GEN-LAST:event_oEFLineButtonActionPerformed
+
+    private void mEFieldButtoncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mEFieldButtoncActionPerformed
+        SimulationControl.createApp(new EFApp3());
+    }//GEN-LAST:event_mEFieldButtoncActionPerformed
+
+    private void mEFieldAppButtondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mEFieldAppButtondActionPerformed
+        SimulationControl.createApp(new EFApp4());
+    }//GEN-LAST:event_mEFieldAppButtondActionPerformed
+
+    private void FLineApp3aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FLineApp3aActionPerformed
+        CalculationControl.createApp(new FieldLineApp31());
+    }//GEN-LAST:event_FLineApp3aActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,8 +190,11 @@ public class OriginalsMenu extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton FLineApp3a;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton mEFieldButton;
+    private javax.swing.JButton mEFieldAppButtond;
+    private javax.swing.JButton mEFieldButtonb;
+    private javax.swing.JButton mEFieldButtonc;
     private javax.swing.JButton oEFLineButton;
     private javax.swing.JButton oEFieldButton;
     // End of variables declaration//GEN-END:variables

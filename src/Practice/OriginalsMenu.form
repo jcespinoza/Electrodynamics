@@ -30,17 +30,26 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="oEFieldButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="mEFieldButton" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="oEFLineButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="oEFieldButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="oEFLineButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="mEFieldButtonb" max="32767" attributes="0"/>
+                          <Component id="FLineApp3a" max="32767" attributes="0"/>
+                          <Component id="mEFieldAppButtond" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="mEFieldButtonc" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,10 +61,17 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="oEFieldButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="mEFieldButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mEFieldButtonb" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-              <Component id="oEFLineButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="mEFieldButtonc" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="mEFieldAppButtond" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="oEFLineButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="FLineApp3a" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="130" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -75,12 +91,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="oEFieldButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="mEFieldButton">
+    <Component class="javax.swing.JButton" name="mEFieldButtonb">
       <Properties>
         <Property name="text" type="java.lang.String" value="Our ElectricFieldApp 10.1 b"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mEFieldButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mEFieldButtonbActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="oEFLineButton">
@@ -89,6 +105,30 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="oEFLineButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="FLineApp3a">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Our FieldLineApp 10.3 a"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FLineApp3aActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="mEFieldAppButtond">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Our ElectricFieldApp 10.1 d"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mEFieldAppButtondActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="mEFieldButtonc">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Our ElectricFieldApp 10.1 c"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mEFieldButtoncActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

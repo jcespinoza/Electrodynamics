@@ -37,6 +37,7 @@ public class OriginalsMenu extends javax.swing.JFrame {
         mEFieldAppButtond = new javax.swing.JButton();
         mEFieldButtonc = new javax.swing.JButton();
         mFLApp2 = new javax.swing.JButton();
+        mEPotentialButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,6 +92,13 @@ public class OriginalsMenu extends javax.swing.JFrame {
             }
         });
 
+        mEPotentialButton.setText("Our ElectricPotentialApp");
+        mEPotentialButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mEPotentialButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,11 +118,13 @@ public class OriginalsMenu extends javax.swing.JFrame {
                                 .addComponent(oEFLineButton)))
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(mEFieldButtonb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FLineApp3a, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(mEFieldAppButtond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(mEFieldButtonc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(mFLApp2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(mEPotentialButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(mEFieldButtonb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(FLineApp3a, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(mEFieldAppButtond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(mEFieldButtonc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(mFLApp2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -136,7 +146,9 @@ public class OriginalsMenu extends javax.swing.JFrame {
                     .addComponent(mFLApp2))
                 .addGap(8, 8, 8)
                 .addComponent(FLineApp3a)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mEPotentialButton)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
@@ -170,6 +182,10 @@ public class OriginalsMenu extends javax.swing.JFrame {
     private void mFLApp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFLApp2ActionPerformed
         CalculationControl.createApp(new FieldLineApp2());
     }//GEN-LAST:event_mFLApp2ActionPerformed
+
+    private void mEPotentialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mEPotentialButtonActionPerformed
+        CalculationControl.createApp(new ElectricPotentialApp());
+    }//GEN-LAST:event_mEPotentialButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,6 +227,7 @@ public class OriginalsMenu extends javax.swing.JFrame {
     private javax.swing.JButton mEFieldAppButtond;
     private javax.swing.JButton mEFieldButtonb;
     private javax.swing.JButton mEFieldButtonc;
+    private javax.swing.JButton mEPotentialButton;
     private javax.swing.JButton mFLApp2;
     private javax.swing.JButton oEFLineButton;
     private javax.swing.JButton oEFieldButton;

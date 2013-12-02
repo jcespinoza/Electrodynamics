@@ -55,6 +55,14 @@ public class FieldLine implements Drawable, ODE, Runnable {
   public double[] getState() {
     return state;
   }
+  
+  void setDone(boolean b){
+      done = b;
+  }
+  
+  boolean isDone(){
+      return done;
+  }
 
   /**
    * Gets the rate for the field line using the given state.

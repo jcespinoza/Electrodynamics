@@ -38,7 +38,7 @@ public class FieldLineApp extends AbstractCalculation implements InteractiveMous
     double q = control.getDouble("q");
     Charge charge = new Charge(x, y, q);
     frame.addDrawable(charge);
-    frame.setDefaultCloseOperation(OSPFrame.DISPOSE_ON_CLOSE);
+    frame.setDefaultCloseOperation(OSPFrame.HIDE_ON_CLOSE);
   }
 
   /**

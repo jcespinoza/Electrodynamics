@@ -34,7 +34,7 @@ public class EFAppbeta extends AbstractSimulation implements InteractiveMouseHan
     frame.setZRange(false, 0, 2);
     frame.setAll(eField); // sets the vector field
     frame.setInteractiveMouseHandler(this);
-    frame.setDefaultCloseOperation(OSPFrame.DISPOSE_ON_CLOSE);
+    frame.setDefaultCloseOperation(OSPFrame.HIDE_ON_CLOSE);
   }
 
   public void createFixedCharges(){

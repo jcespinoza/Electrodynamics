@@ -33,7 +33,7 @@ public class EFApp4 extends AbstractSimulation implements InteractiveMouseHandle
         frame.setZRange(false, 0, 2);
         frame.setAll(eField); // sets the vector field
         frame.setInteractiveMouseHandler(this);
-        frame.setDefaultCloseOperation(OSPFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(OSPFrame.HIDE_ON_CLOSE);
     }
     
     public static void main(String[] args) {
@@ -77,6 +77,7 @@ public class EFApp4 extends AbstractSimulation implements InteractiveMouseHandle
     @Override
     public void start() {
         calculateField();
+        frame.setVisible(true);
         System.out.println("Triggered start()");
     }
 
@@ -101,7 +102,7 @@ public class EFApp4 extends AbstractSimulation implements InteractiveMouseHandle
         frame.addDrawable(tCharge);
         boundariesEnabled = control.getBoolean("Jaula");
         calculateField();
-        System.out.println("Triggered initialize()");
+        frame.setVisible(true);
     }
 
     @Override

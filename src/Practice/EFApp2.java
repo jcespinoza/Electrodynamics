@@ -5,6 +5,8 @@ import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.List;
 import org.opensourcephysics.controls.AbstractSimulation;
+import org.opensourcephysics.controls.Control;
+import org.opensourcephysics.controls.MainFrame;
 import org.opensourcephysics.controls.SimulationControl;
 import org.opensourcephysics.display.InteractiveMouseHandler;
 import org.opensourcephysics.display.InteractivePanel;
@@ -33,7 +35,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
         frame.setZRange(false, 0, 2);
         frame.setAll(eField); // sets the vector field
         frame.setInteractiveMouseHandler(this);
-        frame.setDefaultCloseOperation(OSPFrame.DISPOSE_ON_CLOSE);
+        frame.setDefaultCloseOperation(OSPFrame.HIDE_ON_CLOSE);
     }
     
     public static void main(String[] args) {
@@ -77,7 +79,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
     @Override
     public void start() {
         calculateField();
-        System.out.println("Triggered start()");
+        frame.setVisible(true);
     }
 
 
@@ -106,7 +108,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
         frame.addDrawable(tCharge);
         boundariesEnabled = control.getBoolean("Jaula");
         calculateField();
-        System.out.println("Triggered initialize()");
+        frame.setVisible(true);
     }
 
     @Override
@@ -128,7 +130,7 @@ public class EFApp2 extends AbstractSimulation implements InteractiveMouseHandle
         control.setValue("pm", 0.1);
         control.setValue("Jaula", true);
         frame.clearDrawables();
-        System.out.println("Triggered reset()");
+
     }
     /****************************************/
     

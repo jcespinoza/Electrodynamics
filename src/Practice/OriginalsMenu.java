@@ -36,6 +36,7 @@ public class OriginalsMenu extends javax.swing.JFrame {
         FLineApp3a = new javax.swing.JButton();
         mEFieldAppButtond = new javax.swing.JButton();
         mEFieldButtonc = new javax.swing.JButton();
+        mFLApp2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +84,13 @@ public class OriginalsMenu extends javax.swing.JFrame {
             }
         });
 
+        mFLApp2.setText("Our FieldLineApp 10.2 d");
+        mFLApp2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mFLApp2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,8 +112,9 @@ public class OriginalsMenu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(mEFieldButtonb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(FLineApp3a, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(mEFieldAppButtond, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mEFieldButtonc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(mEFieldAppButtond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mEFieldButtonc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mFLApp2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -124,15 +133,18 @@ public class OriginalsMenu extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(oEFLineButton)
-                    .addComponent(FLineApp3a))
-                .addContainerGap(130, Short.MAX_VALUE))
+                    .addComponent(mFLApp2))
+                .addGap(8, 8, 8)
+                .addComponent(FLineApp3a)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void mEFieldButtonbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mEFieldButtonbActionPerformed
-        SimulationControl.createApp(new EFApp2());
+        EFApp2 ef2 = new EFApp2();
+        SimulationControl.createApp(ef2);
     }//GEN-LAST:event_mEFieldButtonbActionPerformed
 
     private void oEFieldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oEFieldButtonActionPerformed
@@ -154,6 +166,10 @@ public class OriginalsMenu extends javax.swing.JFrame {
     private void FLineApp3aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FLineApp3aActionPerformed
         CalculationControl.createApp(new FieldLineApp31());
     }//GEN-LAST:event_FLineApp3aActionPerformed
+
+    private void mFLApp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFLApp2ActionPerformed
+        CalculationControl.createApp(new FieldLineApp2());
+    }//GEN-LAST:event_mFLApp2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,6 +211,7 @@ public class OriginalsMenu extends javax.swing.JFrame {
     private javax.swing.JButton mEFieldAppButtond;
     private javax.swing.JButton mEFieldButtonb;
     private javax.swing.JButton mEFieldButtonc;
+    private javax.swing.JButton mFLApp2;
     private javax.swing.JButton oEFLineButton;
     private javax.swing.JButton oEFieldButton;
     // End of variables declaration//GEN-END:variables

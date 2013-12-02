@@ -13,6 +13,7 @@ import org.opensourcephysics.display.InteractivePanel;
 public class FieldLineApp31 extends FieldLineApp{
     double distance = 1.5; //distancia desde donde las lineas deben comenzar a dibujarse.
     InteractivePanel iPanel = null;
+    
     public FieldLineApp31(){
         super();
     }
@@ -40,6 +41,10 @@ public class FieldLineApp31 extends FieldLineApp{
                 if(panel.getInteractive()==null) {
                     return;
                 }
+                ArrayList<FieldLine> lines = frame.getDrawables(FieldLine.class);
+                for(FieldLine fl:lines){
+                    fl.setDone(false);
+                }
                 frame.removeObjectsOfClass(FieldLine.class); // field is invalid
                 frame.repaint();                             // repaint to keep the screen up to date
                 break;
@@ -53,6 +58,10 @@ public class FieldLineApp31 extends FieldLineApp{
     public void reset() {
         control.println("Calculate creates a new charge and clears the field lines.");
         control.println("You can drag charges.");
+        ArrayList<FieldLine> lines = frame.getDrawables(FieldLine.class);
+        for(FieldLine fl:lines){
+            fl.setDone(false);
+        }
         frame.clearDrawables(); // remove charges and field lines
         control.setValue("x", 0);
         control.setValue("y", 0);
@@ -66,7 +75,7 @@ public class FieldLineApp31 extends FieldLineApp{
 
     /**Own Methods*/
     /************************************/
-    private void showLines() {
+    public void showLines() {
         if(iPanel==null) return;
         ArrayList<Charge> chargeList = frame.getDrawables(Charge.class); //tomos las particulas chargadas de la lista de objetos Dibujables del panel, solo necesito cargas
 

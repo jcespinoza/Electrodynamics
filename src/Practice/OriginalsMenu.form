@@ -44,8 +44,9 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="mEFieldButtonb" max="32767" attributes="0"/>
                           <Component id="FLineApp3a" max="32767" attributes="0"/>
-                          <Component id="mEFieldAppButtond" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="mEFieldAppButtond" alignment="0" max="32767" attributes="0"/>
                           <Component id="mEFieldButtonc" alignment="0" max="32767" attributes="0"/>
+                          <Component id="mFLApp2" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -70,9 +71,11 @@
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="oEFLineButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="FLineApp3a" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mFLApp2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="130" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Component id="FLineApp3a" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="99" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -129,6 +132,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mEFieldButtoncActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="mFLApp2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Our FieldLineApp 10.2 d"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mFLApp2ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

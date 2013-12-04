@@ -51,8 +51,8 @@ public class FieldLineApp42 extends FieldLineApp31{
     public void reset() {
         if(!closeActionFixed)
             fixCloseAction(control);
-        control.println("Calculate creates a new charge and clears the field lines.");
-        control.println("You can drag charges.");
+        control.println("Calcular crea una nueva carga y calcula las lineas de campo.");
+        control.println("Las cargas pueden arrastrarse.");
         ArrayList<FieldLine4> lines = frame.getDrawables(FieldLine4.class);
         for(FieldLine4 fl:lines){
             fl.setDone(false);

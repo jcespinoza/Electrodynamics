@@ -11,11 +11,12 @@ import org.opensourcephysics.display.InteractivePanel;
  *
  */
 public class FieldLineApp31 extends FieldLineApp{
-    double distance = 1.5; //distancia desde donde las lineas deben comenzar a dibujarse.
+    double distance; //distancia desde donde las lineas deben comenzar a dibujarse.
     InteractivePanel iPanel = null;
     
     public FieldLineApp31(){
         super();
+        this.distance = 1.5;
     }
     /*/*Overrode Methods*///
     /*********************************/
@@ -58,8 +59,8 @@ public class FieldLineApp31 extends FieldLineApp{
     public void reset() {
         if(!closeActionFixed)
             fixCloseAction(control);
-        control.println("Calculate creates a new charge and clears the field lines.");
-        control.println("You can drag charges.");
+        control.println("Calcular crea una nueva carga y calcula las lineas de campo.");
+        control.println("Las cargas pueden arrastrarse.");
         ArrayList<FieldLine> lines = frame.getDrawables(FieldLine.class);
         for(FieldLine fl:lines){
             fl.setDone(false);

@@ -27,7 +27,7 @@ public class EFApp4 extends AbstractSimulation implements InteractiveMouseHandle
     boolean boundariesEnabled = true;
     boolean closeActionFixed  = false;
     double eField[][][] = new double[2][n][n];
-    Vector2DFrame frame = new Vector2DFrame("X", "Y", "Electrid Field");
+    Vector2DFrame frame = new Vector2DFrame("X", "Y", "Campo Electrico");
     TestCharge tCharge;
     
     
@@ -112,8 +112,8 @@ public class EFApp4 extends AbstractSimulation implements InteractiveMouseHandle
     public void reset() {
         if(!closeActionFixed)
             fixCloseAction(control);
-        control.println("Creates charges");
-        control.println("You can drag charges.");
+        control.println("Crea cargas");
+        control.println("Las cargas pueden arrastrarse.");
         control.setValue("x1", 2);
         control.setValue("y1", 0);
         control.setValue("q1", 1);
@@ -167,10 +167,6 @@ for(int ix = 0;ix<n;ix++) {
         double ret[] = {0,0};
         int xPos = frame.xToIndex(tCharge.getX());
         int yPos = frame.yToIndex(tCharge.getY());
-        //System.out.println("Xindex: " + xPos + " X: " + tCharge.getX());
-        //System.out.println("Yindex: " + yPos + " Y: " + tCharge.getY());
-        //double ex = eField[0][(int)(xPos)][(int)(yPos)];
-        //double ey = eField[1][(int)(xPos)][(int)(yPos)];
         double xComp[][] = eField[0];
         double yComp[][] = eField[1];
         double ex = xComp[xPos][yPos];

@@ -24,7 +24,7 @@ public class ElectricFieldApp extends AbstractCalculation implements Interactive
   double a = 10;                             // viewing side length
   boolean closeActionFixed  = false;
   double[][][] eField = new double[2][n][n]; // stores electric field
-  Vector2DFrame frame = new Vector2DFrame("x", "y", "Electric field");
+  Vector2DFrame frame = new Vector2DFrame("x", "y", "Campo Electrico");
 
   /**
    * The ElectricFieldApp constructor.
@@ -55,8 +55,8 @@ public class ElectricFieldApp extends AbstractCalculation implements Interactive
   public void reset() {
         if(!closeActionFixed)
             fixCloseAction(control);
-        control.println("Calculate creates a new charge and updates the field.");
-        control.println("You can drag charges.");
+        control.println("Calculate crea una nueva carga y actualiza el campo.");
+        control.println("Las cargas pueden arrastrarse.");
         frame.clearDrawables(); // removes all charges
         control.setValue("x", 0);
         control.setValue("y", 0);

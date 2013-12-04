@@ -43,56 +43,57 @@ public class OriginalsMenu extends javax.swing.JFrame {
 
         jLabel1.setText("Elige una Applet");
 
-        oEFieldButton.setText("Original ElectricFieldApp");
+        oEFieldButton.setText("ElectricFieldApp Original");
         oEFieldButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 oEFieldButtonActionPerformed(evt);
             }
         });
 
-        mEFieldButtonb.setText("Our ElectricFieldApp 10.1 b");
+        mEFieldButtonb.setText("Mod. ElectricFieldApp 10.1 b");
+        mEFieldButtonb.setToolTipText("");
         mEFieldButtonb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mEFieldButtonbActionPerformed(evt);
             }
         });
 
-        oEFLineButton.setText("Original ElectricFieldLineApp");
+        oEFLineButton.setText("ElectricFieldLineApp Original");
         oEFLineButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 oEFLineButtonActionPerformed(evt);
             }
         });
 
-        FLineApp3a.setText("Our FieldLineApp 10.3 a");
+        FLineApp3a.setText("Mod FieldLineApp 10.3 a");
         FLineApp3a.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FLineApp3aActionPerformed(evt);
             }
         });
 
-        mEFieldAppButtond.setText("Our ElectricFieldApp 10.1 d");
+        mEFieldAppButtond.setText("Mod ElectricFieldApp 10.1 d");
         mEFieldAppButtond.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mEFieldAppButtondActionPerformed(evt);
             }
         });
 
-        mEFieldButtonc.setText("Our ElectricFieldApp 10.1 c");
+        mEFieldButtonc.setText("Mod ElectricFieldApp 10.1 c");
         mEFieldButtonc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mEFieldButtoncActionPerformed(evt);
             }
         });
 
-        mFLApp2.setText("Our FieldLineApp 10.2 d");
+        mFLApp2.setText("Mod FieldLineApp 10.2 d");
         mFLApp2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mFLApp2ActionPerformed(evt);
             }
         });
 
-        mEPotentialButton.setText("Our ElectricPotentialApp");
+        mEPotentialButton.setText("Mod ElectricPotentialApp");
         mEPotentialButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mEPotentialButtonActionPerformed(evt);
@@ -119,13 +120,12 @@ public class OriginalsMenu extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(mEPotentialButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(mEFieldButtonb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FLineApp3a, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(mEFieldAppButtond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(mEFieldButtonc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(mFLApp2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                            .addComponent(mEFieldButtonb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FLineApp3a, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mEFieldAppButtond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mEFieldButtonc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(mFLApp2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(12, 12, 12))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,7 +148,7 @@ public class OriginalsMenu extends javax.swing.JFrame {
                 .addComponent(FLineApp3a)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(mEPotentialButton)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGap(70, 70, 70))
         );
 
         pack();

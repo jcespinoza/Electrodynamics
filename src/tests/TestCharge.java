@@ -1,6 +1,5 @@
 package tests;
 
-import org.opensourcephysics.numerics.Euler;
 import org.opensourcephysics.numerics.EulerRichardson;
 import org.opensourcephysics.numerics.ODE;
 import org.opensourcephysics.numerics.ODESolver;

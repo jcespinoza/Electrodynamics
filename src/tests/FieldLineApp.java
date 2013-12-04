@@ -48,9 +48,9 @@ public class FieldLineApp extends AbstractCalculation implements InteractiveMous
   public void reset() {
     if(!closeActionFixed)
         fixCloseAction(control);
-    control.println("Calculate creates a new charge and clears the field lines.");
-    control.println("You can drag charges.");
-    control.println("Double click in display to compute a field line.");
+    control.println("Calcular crea una nueva carga y elimina las lineas de campo.");
+    control.println("Las cargas pueden arrastrarse.");
+    control.println("Doble clik para calcular las lineas de campo.");
     frame.clearDrawables(); // remove charges and field lines
     control.setValue("x", 0);
     control.setValue("y", 0);

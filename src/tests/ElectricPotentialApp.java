@@ -47,8 +47,8 @@ public class ElectricPotentialApp extends AbstractCalculation implements Interac
   public void reset() {
     if(!closeActionFixed)
         fixCloseAction(control);
-    control.println("Calculate creates a new charge and updates the field.");
-    control.println("You can drag charges.");
+    control.println("Calcular crea a una nueva carga y actualiza el campo.");
+    control.println("Las cargas pueden arrastrarse.");
     frame.clearDrawables(); // removes all charges
     control.setValue("x", 0);
     control.setValue("y", 0);

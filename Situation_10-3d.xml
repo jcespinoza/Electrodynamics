@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object class="org.opensourcephysics.controls.OSPApplication">
+    <property name="control" type="object">
+    <object class="org.opensourcephysics.controls.CalculationControl">
+        <property name="x" type="string">-2.5</property>
+        <property name="y" type="string">0</property>
+        <property name="q" type="string">1</property>
+    </object>
+    </property>
+    <property name="model" type="object">
+    <object class="Practice.FieldLineApp31"/>
+    </property>
+</object>
